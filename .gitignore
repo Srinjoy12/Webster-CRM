@@ -1,0 +1,10 @@
+# Backend .env file
+mini-crm-backend/.env
+mini-crm-backend/.env*
+
+# Other common ignores
+.DS_Store
+*.log
+
+# Node modules in root if any
+/node_modules 
