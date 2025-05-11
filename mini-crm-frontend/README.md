@@ -142,25 +142,4 @@ These AI features aim to simplify complex tasks and provide creative assistance,
 *   **AI Feature Integration:** AI features were added to existing forms and builders, aiming for a non-intrusive user experience where AI assists rather than dictates.
 *   **Routing:** The project uses a mix of Next.js Pages Router (for core CRM app) and App Router (for the new `/landing` page), which is a common approach during incremental adoption of new Next.js features.
 
-## ☁️ Deployment
 
-This Next.js application can be easily deployed to various platforms that support Node.js applications, such as:
-
-*   **Vercel** (Recommended for Next.js projects, offers seamless deployment from a Git repository)
-*   **Netlify**
-*   **Render**
-*   **AWS Amplify**
-*   **Google Cloud Run**
-*   **Azure App Service**
-
-To deploy, connect your public GitHub repository to one of these services and follow their specific instructions for Next.js applications. Ensure your build command is `npm run build` (or `yarn build`) and your environment variables are configured in the deployment platform's settings.
-
-## 📹 Demo Video
-
-A demo video (max 7 minutes) should be created to showcase the project. It should cover:
-*   Key features implemented.
-*   How the problem of CRM and campaign management was approached.
-*   Any significant trade-offs made during development.
-*   A clear explanation of the AI features and their integration.
-
-Good luck!
