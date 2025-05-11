@@ -1,0 +1,40 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+@layer base {
+  /* CSS variable definitions moved to tailwind.config.ts */
+
+  /* Global border application removed, apply borders directly to components or use a more specific selector if needed */
+  /* * {
+    @apply border-[hsl(var(--border))];
+  } */
+
+  body {
+    /* Prioritize background from main app/globals.css or specific page component */
+    /* @apply bg-white text-foreground font-inter; */
+    @apply text-foreground font-inter;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-grotesk font-medium tracking-tight;
+  }
+  
+  .roy-container {
+    /* Max-width will be controlled at the page level or specific section containers */
+    /* @apply w-full max-w-3xl mx-auto px-4 md:px-6 lg:px-8; */
+    @apply w-full mx-auto px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Instead of using @apply, directly define the transition class */
+.transition-all {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Removed html, body background-color: white !important; as it should be handled by the main app styles or tailwind config */
