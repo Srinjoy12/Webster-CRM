@@ -5,7 +5,8 @@ const pool = mysql.createPool({
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'mini_crm',
-  port: process.env.DB_PORT || 3306,
+  port: parseInt(process.env.DB_PORT) || 3306,
+  ssl: process.env.DB_SSL_REJECT_UNAUTHORIZED ? { rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED === 'true' } : undefined,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
