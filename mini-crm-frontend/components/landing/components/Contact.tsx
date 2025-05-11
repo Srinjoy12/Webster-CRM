@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="text-center max-w-2xl mx-auto mb-16 opacity-0 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">Get in Touch</h2>
           <p className="text-gray-600">
-            Ready to start your project? Reach out to us and let's create something amazing together.
+            Ready to start your project? Reach out to us and let&apos;s create something amazing together.
           </p>
         </div>
         

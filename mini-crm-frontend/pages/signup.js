@@ -22,7 +22,7 @@ export default function Signup() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
-    } catch (_err) {
+    } catch (_unused_err) {
       setError('Signup failed.');
       setLoading(false);
     }

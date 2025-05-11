@@ -48,6 +48,7 @@ export default function Campaigns() {
     try {
       const response = await api.post('/api/audience/preview', { rules, logic });
       setAudienceSize(response.data.size);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_err) {
       setAudienceSize('Error');
     }

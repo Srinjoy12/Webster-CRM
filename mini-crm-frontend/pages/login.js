@@ -22,7 +22,7 @@ export default function Login() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
-    } catch (_err) {
+    } catch (_unused_err) {
       setError('Login failed. Please check your credentials.');
       setLoading(false);
     }
