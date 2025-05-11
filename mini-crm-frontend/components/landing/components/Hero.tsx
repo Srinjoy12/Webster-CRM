@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, TrendingUp } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 import { Button } from './ui/button';
 import { LineChart, Line, XAxis, ResponsiveContainer, CartesianGrid, ReferenceDot } from 'recharts';
 import Link from 'next/link';

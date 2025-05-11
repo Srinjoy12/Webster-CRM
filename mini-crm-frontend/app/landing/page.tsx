@@ -2,7 +2,7 @@
 
 import App from '../../components/landing/App';
 import '../../components/landing/index.css'; // Import the CSS
-import Link from 'next/link';
+// import Link from 'next/link'; // Removed unused import
 
 export default function LandingPage() {
   return (

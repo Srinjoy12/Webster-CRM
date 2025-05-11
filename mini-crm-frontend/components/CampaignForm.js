@@ -29,11 +29,9 @@ const WandIcon = () => (
 // --- Base Tailwind Classes (Updated for new design) ---
 const commonInputBaseClasses = "block w-full rounded-lg shadow-sm sm:text-sm py-2.5 px-3.5 focus:outline-none";
 const lightInputClasses = `${commonInputBaseClasses} border-slate-300 placeholder-slate-400 focus:border-sky-600 focus:ring-2 focus:ring-sky-300 text-slate-900`;
-const darkInputClasses = `${commonInputBaseClasses} bg-slate-700/80 border-slate-600 text-slate-100 placeholder-slate-400 focus:border-sky-500 focus:ring-1 focus:ring-sky-500`;
 
 const labelBaseClasses = "block text-sm font-semibold mb-1.5";
 const lightLabelClasses = `${labelBaseClasses} text-slate-800`;
-const darkLabelClasses = `${labelBaseClasses} text-slate-300`;
 
 const baseButtonClasses = "inline-flex items-center justify-center rounded-lg font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-150 ease-in-out disabled:opacity-60 disabled:cursor-not-allowed";
 // --- End Base Tailwind Classes ---

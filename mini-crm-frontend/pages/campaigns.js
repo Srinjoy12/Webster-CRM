@@ -48,7 +48,7 @@ export default function Campaigns() {
     try {
       const response = await api.post('/api/audience/preview', { rules, logic });
       setAudienceSize(response.data.size);
-    } catch (err) {
+    } catch (_err) {
       setAudienceSize('Error');
     }
     setPreviewLoading(false);

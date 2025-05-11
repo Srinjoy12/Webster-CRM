@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { Sparkles, Camera } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ export default function Signup() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
-    } catch (err) {
+    } catch (_err) {
       setError('Signup failed.');
       setLoading(false);
     }
@@ -53,16 +54,20 @@ export default function Signup() {
       <div className="md:w-1/2 bg-white flex flex-col items-center justify-center p-8 md:p-12">
         <div className="max-w-md w-full">
           <div className="mb-8 text-left">
-             <a href="/" className="font-grotesk text-3xl font-regular text-gray-800">Webster</a>
+            <Link href="/" legacyBehavior>
+              <a className="font-grotesk text-3xl font-regular text-gray-800">Webster</a>
+            </Link>
           </div>
           <h2 className="text-2xl font-regular text-gray-900 mb-3 font-grotesk">
             Create your account
           </h2>
           <p className="text-sm text-gray-600 mb-8">
             Already have an account?{' '}
-            <a href="/login" className="font-medium text-blue-600 hover:text-blue-500">
-              Log in
-            </a>
+            <Link href="/login" legacyBehavior>
+              <a className="font-medium text-blue-600 hover:text-blue-500">
+                Log in
+              </a>
+            </Link>
           </p>
 
           <form onSubmit={handleSignup} className="space-y-6">

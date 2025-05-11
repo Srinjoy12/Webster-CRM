@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Sparkles, Heart, CheckCircle } from 'lucide-react';
+import { Database, Sparkles, Heart } from 'lucide-react';
 
 const steps = [
   {

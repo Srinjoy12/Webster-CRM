@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, TrendingUp, BarChart3, Users, CheckCircle } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 const analyticsData = [
   { name: 'Jun', sales: 2000 },
@@ -82,12 +82,11 @@ const FeaturesSection = () => {
                   <LineChart data={analyticsData} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>
                     <Line type="monotone" dataKey="sales" stroke="#3B82F6" strokeWidth={2} dot={false} />
                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#6B7280' }} dy={5} />
-                    {/* <YAxis hide={true} domain={['dataMin - 500', 'dataMax + 500']} /> */}
                     <Tooltip
                       contentStyle={{ backgroundColor: 'white', borderRadius: '0.5rem', borderColor: '#e5e7eb', fontSize: '0.75rem', padding: '0.25rem 0.5rem' }}
                       itemStyle={{ color: '#3B82F6'}}
                       labelStyle={{ color: '#374151', fontWeight: '500' }}
-                      formatter={(value: any) => [`$${value.toLocaleString()}`, null]}
+                      formatter={(value: number) => [`$${value.toLocaleString()}`, null]}
                     />
                   </LineChart>
                 </ResponsiveContainer>

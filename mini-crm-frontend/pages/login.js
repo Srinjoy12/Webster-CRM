@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { Sparkles, Camera } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -21,7 +22,7 @@ export default function Login() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
-    } catch (err) {
+    } catch (_err) {
       setError('Login failed. Please check your credentials.');
       setLoading(false);
     }
@@ -56,10 +57,12 @@ export default function Login() {
             Log in to your account
           </h2>
           <p className="text-sm text-gray-600 mb-8">
-            Don't have an account?{' '}
-            <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
-              Sign up
-            </a>
+            Don&apos;t have an account?{' '}
+            <Link href="/signup" legacyBehavior>
+              <a className="font-medium text-blue-600 hover:text-blue-500">
+                Sign up
+              </a>
+            </Link>
           </p>
 
           <form onSubmit={handleLogin} className="space-y-6">

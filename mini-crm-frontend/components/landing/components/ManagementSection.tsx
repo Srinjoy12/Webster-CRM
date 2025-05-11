@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Plus, Minus, ClipboardList, ArrowRight } from 'lucide-react';
+import { ArrowUp, Plus, Minus, ClipboardList } from 'lucide-react';
 import { Button } from './ui/button'; // Assuming Button component is in ./ui/button relative to this new component
 
 const managementItems = [
@@ -58,7 +58,7 @@ const ManagementSection = () => {
               Effortlessly manage <br /> customer relationships
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-xl">
-              Webster seamlessly integrates with popular CRM platforms, allowing you to manage leads, track customer interactions, and improve your startup's growth—all in one place.
+              Webster seamlessly integrates with popular CRM platforms, allowing you to manage leads, track customer interactions, and improve your startup&apos;s growth—all in one place.
             </p>
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base rounded-lg shadow-md hover:shadow-lg transition-shadow">
               Get started

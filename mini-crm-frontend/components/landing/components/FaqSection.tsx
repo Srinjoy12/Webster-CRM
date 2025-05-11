@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, X, Framer } from 'lucide-react'; // Assuming Framer icon is for the link
+import { Plus, X } from 'lucide-react'; // Removed Framer
 
 const faqData = [
   {
@@ -40,7 +40,7 @@ const FaqSection = () => {
       <div className="roy-container px-4 mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <span className="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
-            FAQ's
+            FAQ&apos;s
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-regular text-gray-900 leading-tight">
             Everything you need to know <br /> about webster
