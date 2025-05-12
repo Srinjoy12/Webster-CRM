@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/landing/components/ui/button';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 const services = [
   {

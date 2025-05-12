@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/landing/components/ui/button';
 import { LineChart, Line, XAxis, ResponsiveContainer, CartesianGrid, ReferenceDot } from 'recharts';
