@@ -97,7 +97,7 @@ const WorkGrid = () => {
             <div 
               key={project.id} 
               className="project-card group bg-white rounded-md overflow-hidden opacity-0"
-              ref={el => itemRefs.current[index] = el}
+              ref={el => { itemRefs.current[index] = el; }}
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="overflow-hidden">
