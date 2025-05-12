@@ -11,22 +11,9 @@ require('./auth/google'); // Google OAuth strategy
 
 const app = express();
 
-const allowedOrigins = [
-  'http://localhost:3001',         // Your local frontend
-  'https://webster-crm.vercel.app' // Your deployed frontend
-];
-
-// CORS middleware should be added after app is created
+// TEMPORARY DIAGNOSTIC STEP: Allow only the specific Vercel origin
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl tests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
+  origin: 'https://webster-crm.vercel.app',
   credentials: true
 }));
 
