@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/base"; 
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @theme {
   /* Base HSL values as CSS variables for reusability if needed */
