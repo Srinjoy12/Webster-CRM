@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Adjust if backend is deployed elsewhere
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000', // Adjust if backend is deployed elsewhere
 });
 
 export const generateRulesFromNaturalQuery = async (query) => {
