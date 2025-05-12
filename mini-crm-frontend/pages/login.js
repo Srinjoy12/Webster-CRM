@@ -22,6 +22,7 @@ export default function Login() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars  
     } catch (_error) {
       setError('Login failed. Please check your credentials.');
       setLoading(false);

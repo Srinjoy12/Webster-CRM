@@ -22,6 +22,7 @@ export default function Signup() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (_error) {
       setError('Signup failed.');
       setLoading(false);
