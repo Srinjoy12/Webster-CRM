@@ -74,7 +74,7 @@ const Services = () => {
             <div 
               key={service.id}
               className="bg-white p-8 rounded-lg border border-gray-100 transition-all hover:shadow-md opacity-0"
-              ref={el => cardRefs.current[index] = el}
+              ref={el => { cardRefs.current[index] = el; }}
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
