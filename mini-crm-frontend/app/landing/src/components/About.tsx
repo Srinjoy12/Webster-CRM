@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/landing/components/ui/button';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

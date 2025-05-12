@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/landing/components/ui/button';
 
 const navItems = [
   { name: "Home", href: "#home" },

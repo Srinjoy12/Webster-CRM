@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/landing/components/ui/button';
+import { Input } from '@/components/landing/components/ui/input';
+import { Textarea } from '@/components/landing/components/ui/textarea';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
