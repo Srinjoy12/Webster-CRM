@@ -1,12 +1,13 @@
-@import "tailwindcss/preflight";
+@import "tailwindcss";
 
 @theme {
-  /* Base HSL values as CSS variables for reusability if needed */
+  /* Base HSL values */
   --hsl-border: 20 5.9% 90%;
   --hsl-input: 20 5.9% 90%;
   --hsl-ring: 20 14.3% 4.1%;
-  --hsl-background: 42 33% 97%;
-  --hsl-foreground: 20 14.3% 4.1%;
+  /* Adjusted background/foreground HSLs to match :root for light mode initially */
+  --hsl-background: 0 0% 100%; /* from :root --background: #ffffff; */
+  --hsl-foreground: 0 0% 9%;   /* from :root --foreground: #171717; */
   --hsl-primary: 24 9.8% 10%;
   --hsl-primary-foreground: 60 9.1% 97.8%;
   --hsl-secondary: 60 4.8% 95.9%;
@@ -42,29 +43,50 @@
   --color-popover-foreground: hsl(var(--hsl-popover-foreground));
   --color-card: hsl(var(--hsl-card));
   --color-card-foreground: hsl(var(--hsl-card-foreground));
+
+  /* Radius (already in tailwind.config.ts but can be defined here too) */
+  /* --radius: 0.5rem; */
+
+  /* Fonts (if you want Tailwind to manage them) */
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
 }
 
+/* Standard CSS :root definitions for global scope, including dark mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --font-geist-sans: GeistSans, sans-serif; /* Assuming GeistSans is imported/available */
+  --font-geist-mono: GeistMono, monospace;   /* Assuming GeistMono is imported/available */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 23, 23, 23; /* #171717 */
+
+  /* For direct use by body, not necessarily for Tailwind's @theme unless mapped */
+  --background-val: #ffffff;
+  --foreground-val: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-rgb: 10, 10, 10;
+    --foreground-rgb: 237, 237, 237; /* #ededed */
+    
+    --background-val: #0a0a0a;
+    --foreground-val: #ededed;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Use the global CSS variables for body styling */
+  background: var(--background-val);
+  color: var(--foreground-val);
+  font-family: var(--font-geist-sans); /* Example: using Geist Sans */
 }
+
+/* You might need to explicitly import Tailwind's base, components, utilities 
+   if `@import "tailwindcss"` alone isn't working as expected with `@theme`.
+   However, for v4 with postcss, `@import "tailwindcss"` is often enough.
+   If issues persist, consider these after the @theme block:
+   @import "tailwindcss/base";
+   @import "tailwindcss/components";
+   @import "tailwindcss/utilities";
+*/
