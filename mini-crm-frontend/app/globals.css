@@ -27,8 +27,8 @@
   --color-border: hsl(var(--hsl-border));
   --color-input: hsl(var(--hsl-input));
   --color-ring: hsl(var(--hsl-ring));
-  --color-background: hsl(var(--hsl-background));
-  --color-foreground: hsl(var(--hsl-foreground));
+  --color-background: #ffffff; /* Direct hex, was hsl(var(--hsl-background)) */
+  --color-foreground: #171717; /* Direct hex, was hsl(var(--hsl-foreground)) */
   --color-primary: hsl(var(--hsl-primary));
   --color-primary-foreground: hsl(var(--hsl-primary-foreground));
   --color-secondary: hsl(var(--hsl-secondary));
