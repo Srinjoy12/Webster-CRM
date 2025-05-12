@@ -5,45 +5,42 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./mini-crm-frontend/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./mini-crm-frontend/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./mini-crm-frontend/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        border: "hsl(20, 5.9%, 90%)",
-        input: "hsl(20, 5.9%, 90%)",
-        ring: "hsl(20, 14.3%, 4.1%)",
-        background: "hsl(42, 33%, 97%)", // Landing page background
-        foreground: "hsl(20, 14.3%, 4.1%)", // Landing page foreground
+        border: "var(--color-border)",
+        input: "var(--color-input)",
+        ring: "var(--color-ring)",
+        background: "var(--color-background)", // Landing page background
+        foreground: "var(--color-foreground)", // Landing page foreground
         primary: {
-          DEFAULT: "hsl(24, 9.8%, 10%)",
-          foreground: "hsl(60, 9.1%, 97.8%)",
+          DEFAULT: "var(--color-primary)",
+          foreground: "var(--color-primary-foreground)",
         },
         secondary: {
-          DEFAULT: "hsl(60, 4.8%, 95.9%)",
-          foreground: "hsl(24, 9.8%, 10%)",
+          DEFAULT: "var(--color-secondary)",
+          foreground: "var(--color-secondary-foreground)",
         },
         destructive: {
-          DEFAULT: "hsl(0, 84.2%, 60.2%)",
-          foreground: "hsl(60, 9.1%, 97.8%)",
+          DEFAULT: "var(--color-destructive)",
+          foreground: "var(--color-destructive-foreground)",
         },
         muted: {
-          DEFAULT: "hsl(60, 4.8%, 95.9%)",
-          foreground: "hsl(25, 5.3%, 44.7%)",
+          DEFAULT: "var(--color-muted)",
+          foreground: "var(--color-muted-foreground)",
         },
         accent: {
-          DEFAULT: "hsl(60, 4.8%, 95.9%)",
-          foreground: "hsl(24, 9.8%, 10%)",
+          DEFAULT: "var(--color-accent)",
+          foreground: "var(--color-accent-foreground)",
         },
         popover: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          foreground: "hsl(20, 14.3%, 4.1%)",
+          DEFAULT: "var(--color-popover)",
+          foreground: "var(--color-popover-foreground)",
         },
         card: {
-          DEFAULT: "hsl(0, 0%, 100%)",
-          foreground: "hsl(20, 14.3%, 4.1%)",
+          DEFAULT: "var(--color-card)",
+          foreground: "var(--color-card-foreground)",
         },
       },
       borderRadius: {

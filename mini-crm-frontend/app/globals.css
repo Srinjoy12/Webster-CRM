@@ -1,4 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "tailwindcss";
+
+@theme {
+  /* Base HSL values as CSS variables for reusability if needed */
+  --hsl-border: 20 5.9% 90%;
+  --hsl-input: 20 5.9% 90%;
+  --hsl-ring: 20 14.3% 4.1%;
+  --hsl-background: 42 33% 97%;
+  --hsl-foreground: 20 14.3% 4.1%;
+  --hsl-primary: 24 9.8% 10%;
+  --hsl-primary-foreground: 60 9.1% 97.8%;
+  --hsl-secondary: 60 4.8% 95.9%;
+  --hsl-secondary-foreground: 24 9.8% 10%;
+  --hsl-destructive: 0 84.2% 60.2%;
+  --hsl-destructive-foreground: 60 9.1% 97.8%;
+  --hsl-muted: 60 4.8% 95.9%;
+  --hsl-muted-foreground: 25 5.3% 44.7%;
+  --hsl-accent: 60 4.8% 95.9%;
+  --hsl-accent-foreground: 24 9.8% 10%;
+  --hsl-popover: 0 0% 100%;
+  --hsl-popover-foreground: 20 14.3% 4.1%;
+  --hsl-card: 0 0% 100%;
+  --hsl-card-foreground: 20 14.3% 4.1%;
+
+  /* Tailwind consumable color variables */
+  --color-border: hsl(var(--hsl-border));
+  --color-input: hsl(var(--hsl-input));
+  --color-ring: hsl(var(--hsl-ring));
+  --color-background: hsl(var(--hsl-background));
+  --color-foreground: hsl(var(--hsl-foreground));
+  --color-primary: hsl(var(--hsl-primary));
+  --color-primary-foreground: hsl(var(--hsl-primary-foreground));
+  --color-secondary: hsl(var(--hsl-secondary));
+  --color-secondary-foreground: hsl(var(--hsl-secondary-foreground));
+  --color-destructive: hsl(var(--hsl-destructive));
+  --color-destructive-foreground: hsl(var(--hsl-destructive-foreground));
+  --color-muted: hsl(var(--hsl-muted));
+  --color-muted-foreground: hsl(var(--hsl-muted-foreground));
+  --color-accent: hsl(var(--hsl-accent));
+  --color-accent-foreground: hsl(var(--hsl-accent-foreground));
+  --color-popover: hsl(var(--hsl-popover));
+  --color-popover-foreground: hsl(var(--hsl-popover-foreground));
+  --color-card: hsl(var(--hsl-card));
+  --color-card-foreground: hsl(var(--hsl-card-foreground));
+}
 
 :root {
   --background: #ffffff;
