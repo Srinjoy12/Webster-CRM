@@ -1,12 +1,11 @@
-
 import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import WorkGrid from '@/components/WorkGrid';
-import Services from '@/components/Services';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import Navbar from '@/app/landing/src/components/Navbar';
+import Hero from '@/app/landing/src/components/Hero';
+import WorkGrid from '@/app/landing/src/components/WorkGrid';
+import Services from '@/app/landing/src/components/Services';
+import About from '@/app/landing/src/components/About';
+import Contact from '@/app/landing/src/components/Contact';
+import Footer from '@/app/landing/src/components/Footer';
 
 const Index = () => {
   // Initialize animations and any interactivity
