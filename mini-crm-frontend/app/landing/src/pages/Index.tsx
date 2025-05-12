@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/app/landing/src/components/Navbar';
 import Hero from '@/app/landing/src/components/Hero';
-import WorkGrid from '@/app/landing/src/components/WorkGrid';
-import Services from '@/app/landing/src/components/Services';
-import About from '@/app/landing/src/components/About';
 import Footer from '@/app/landing/src/components/Footer';
 
 const Index = () => {
@@ -34,9 +31,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <WorkGrid />
-      <Services />
-      <About />
       <Footer />
     </div>
   );

@@ -1,13 +1,10 @@
 @import "tailwindcss";
 
-@theme {
-  /* Base HSL values */
+:root {
+  /* HSL Abstractions (optional, if you use them to derive values below) */
   --hsl-border: 20 5.9% 90%;
   --hsl-input: 20 5.9% 90%;
   --hsl-ring: 20 14.3% 4.1%;
-  /* Adjusted background/foreground HSLs to match :root for light mode initially */
-  --hsl-background: 0 0% 100%; /* from :root --background: #ffffff; */
-  --hsl-foreground: 0 0% 9%;   /* from :root --foreground: #171717; */
   --hsl-primary: 24 9.8% 10%;
   --hsl-primary-foreground: 60 9.1% 97.8%;
   --hsl-secondary: 60 4.8% 95.9%;
@@ -23,12 +20,12 @@
   --hsl-card: 0 0% 100%;
   --hsl-card-foreground: 20 14.3% 4.1%;
 
-  /* Tailwind consumable color variables */
+  /* Direct Values for Tailwind and Body */
   --color-border: hsl(var(--hsl-border));
   --color-input: hsl(var(--hsl-input));
   --color-ring: hsl(var(--hsl-ring));
-  --color-background: #ffffff; /* Direct hex, was hsl(var(--hsl-background)) */
-  --color-foreground: #171717; /* Direct hex, was hsl(var(--hsl-foreground)) */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
   --color-primary: hsl(var(--hsl-primary));
   --color-primary-foreground: hsl(var(--hsl-primary-foreground));
   --color-secondary: hsl(var(--hsl-secondary));
@@ -44,49 +41,28 @@
   --color-card: hsl(var(--hsl-card));
   --color-card-foreground: hsl(var(--hsl-card-foreground));
 
-  /* Radius (already in tailwind.config.ts but can be defined here too) */
-  /* --radius: 0.5rem; */
-
-  /* Fonts (if you want Tailwind to manage them) */
-  /* --font-sans: var(--font-geist-sans); */
-  /* --font-mono: var(--font-geist-mono); */
-}
-
-/* Standard CSS :root definitions for global scope, including dark mode */
-:root {
-  --font-geist-sans: GeistSans, sans-serif; /* Assuming GeistSans is imported/available */
-  --font-geist-mono: GeistMono, monospace;   /* Assuming GeistMono is imported/available */
-
-  --background-rgb: 255, 255, 255;
-  --foreground-rgb: 23, 23, 23; /* #171717 */
-
-  /* For direct use by body, not necessarily for Tailwind's @theme unless mapped */
-  --background-val: #ffffff;
-  --foreground-val: #171717;
+  --font-geist-sans: GeistSans, sans-serif;
+  --font-geist-mono: GeistMono, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-rgb: 10, 10, 10;
-    --foreground-rgb: 237, 237, 237; /* #ededed */
+    /* Update HSL abstractions if they change for dark mode */
+    /* --hsl-primary: DDD X% Y%; */
     
-    --background-val: #0a0a0a;
-    --foreground-val: #ededed;
+    /* Update direct values for dark mode */
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+    /* Re-declare HSL-derived colors if their base HSL changes */
+    /* --color-primary: hsl(var(--hsl-primary)); */
+    /* ... etc. for other HSL-derived colors ... */
   }
 }
 
 body {
-  /* Use the global CSS variables for body styling */
-  background: var(--background-val);
-  color: var(--foreground-val);
-  font-family: var(--font-geist-sans); /* Example: using Geist Sans */
+  background: var(--color-background); /* Use Tailwind's variable */
+  color: var(--color-foreground);     /* Use Tailwind's variable */
+  font-family: var(--font-geist-sans);
 }
 
-/* You might need to explicitly import Tailwind's base, components, utilities 
-   if `@import "tailwindcss"` alone isn't working as expected with `@theme`.
-   However, for v4 with postcss, `@import "tailwindcss"` is often enough.
-   If issues persist, consider these after the @theme block:
-   @import "tailwindcss/base";
-   @import "tailwindcss/components";
-   @import "tailwindcss/utilities";
-*/
+/* Removed @theme block and simplified :root definitions. */
