@@ -22,7 +22,7 @@ export default function Login() {
         setLoading(false);
         router.push('/campaigns');
       }, 1000);
-    } catch (_unused_err) {
+    } catch (_err) {
       setError('Login failed. Please check your credentials.');
       setLoading(false);
     }
@@ -36,7 +36,7 @@ export default function Login() {
           <Sparkles size={48} className="text-sky-500" />
         </div>
         <div className="my-auto">
-          <h1 className="text-4xl lg:text-5xl font-regular font-grotesk mb-4">
+          <h1 className="text-4xl lg:text-5xl font-regular font-grotesk mb-4 text-foreground">
             Welcome Back to Webster!             
             <span role="img" aria-label="wave">👋</span>
           </h1>
