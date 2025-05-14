@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Database, Sparkles, Heart } from 'lucide-react';
 
 const steps = [
@@ -21,23 +22,58 @@ const steps = [
 
 const HowItWorksSection = () => {
   // Placeholder image URL - replace with your actual image path
-  const placeholderImageUrl = '/placeholder-person-working.jpg'; 
+  const placeholderImageUrl = '/young-person-intership.jpg'; 
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  const leftImageVariants = {
+    hidden: { opacity: 0, x: -30, scale: 0.95 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.5, delay: 0.2 } }
+  };
+
+  const stepsContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+    }
+  };
+
+  const stepItemVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } }
+  };
 
   return (
     <section id="how-it-works" className="py-16 sm:py-24 bg-white">
       <div className="roy-container px-4 mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <motion.div 
+          className="text-center mb-12 md:mb-16"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <span className="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
             How it works
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-regular text-gray-900 leading-tight">
             Guide on how webster works <br /> for your startup
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side: Image with Overlay Card */}
-          <div className="relative order-last lg:order-first">
+          <motion.div 
+            className="relative order-last lg:order-first"
+            variants={leftImageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <img 
               src={placeholderImageUrl} 
               alt="Person working on a startup" 
@@ -71,12 +107,22 @@ const HowItWorksSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side: Steps */}
-          <div className="space-y-8 relative">
+          <motion.div 
+            className="space-y-8 relative"
+            variants={stepsContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {steps.map((step, index) => (
-              <div key={index} className="flex items-start pl-12 relative">
+              <motion.div 
+                key={index} 
+                className="flex items-start pl-12 relative"
+                variants={stepItemVariants}
+              >
                 {/* Dashed line connector - not for the last item */}
                 {index < steps.length - 1 && (
                   <div className="absolute left-[21px] top-10 bottom-0 w-px border-l-2 border-dashed border-gray-300 h-[calc(100%-2.5rem)]"></div>
@@ -88,9 +134,9 @@ const HowItWorksSection = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

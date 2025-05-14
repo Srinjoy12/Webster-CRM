@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <header className={cn(
       "fixed w-full z-50 transition-all py-4 px-4 md:px-6 lg:px-8",
-      scrolled ? "bg-gray-100/95 backdrop-blur-sm border-b" : "bg-transparent"
+      scrolled ? "bg-gray-100/95 backdrop-blur-sm" : "bg-transparent"
     )}>
       <div className="flex items-center justify-between">
         <div className="flex items-center">

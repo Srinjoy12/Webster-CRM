@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
 import { Button } from './ui/button';
 import { LineChart, Line, XAxis, ResponsiveContainer, CartesianGrid, ReferenceDot } from 'recharts';
@@ -56,6 +57,39 @@ const Hero = () => {
   const avatar2 = "/placeholder-avatar-2.jpg";
   const avatar3 = "/placeholder-avatar-3.jpg";
 
+  const smoothEase = [0.4, 0, 0.2, 1]; // Smoother easing function
+
+  const leftColumnContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3 // Delay relative to Hero's animation start
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25, scale: 0.95 }, // Increased y, added scale
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: smoothEase } // Longer duration, smooth ease
+    }
+  };
+
+  const rightColumnVariants = {
+    hidden: { opacity: 0, y: 25, scale: 0.9 }, // Changed x to y, adjusted scale
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, ease: smoothEase, delay: 0.45 } // Longer duration, smooth ease, adjusted delay
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -64,22 +98,27 @@ const Hero = () => {
     >
       <div className="roy-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6 md:space-y-8 text-left">
-            <div className="inline-flex items-center bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full text-sm font-medium shadow-sm">
+          <motion.div 
+            className="space-y-6 md:space-y-8 text-left"
+            variants={leftColumnContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={itemVariants} className="inline-flex items-center bg-gray-100 text-gray-800 px-3 py-1.5 rounded-full text-sm font-medium shadow-sm">
               <span className="bg-black text-white text-xs font-semibold px-2 py-0.5 rounded-full mr-2">New!</span>
               Sales tracking Available
-            </div>
+            </motion.div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-regular leading-tight text-gray-900">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-regular leading-tight text-gray-900">
               Boost your CRM with
               <span className="block">real-time insights</span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-lg md:text-xl text-gray-600 max-w-lg">
+            <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 max-w-lg">
               Track customer interactions, boost form stats, improve conversion rates & sales
-            </p>
+            </motion.p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2">
               <Link href="/signup">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 w-full sm:w-auto text-base rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 See in Action
@@ -91,9 +130,9 @@ const Hero = () => {
                 View Demo
               </Button>
               </Link>
-            </div>
+            </motion.div>
             
-            <div className="flex items-center justify-start space-x-3 pt-4">
+            <motion.div variants={itemVariants} className="flex items-center justify-start space-x-3 pt-4">
               <div className="flex -space-x-2">
                 <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src={avatar1} alt="User 1" />
                 <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src={avatar2} alt="User 2" />
@@ -109,10 +148,15 @@ const Hero = () => {
                 </div>
                 <p className="text-xs text-gray-500">200+ businesses scale</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           
-          <div className="relative bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100 rounded-3xl p-6 shadow-2xl">
+          <motion.div 
+            className="relative bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100 rounded-3xl p-6 shadow-2xl"
+            variants={rightColumnVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <div className="bg-white rounded-[1.375rem] p-6 shadow-xl">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-base font-semibold text-gray-800">Total Active User</h3>
@@ -157,7 +201,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

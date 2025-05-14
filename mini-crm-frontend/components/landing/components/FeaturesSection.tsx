@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, BarChart3, Users, CheckCircle } from 'lucide-react';
 import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
@@ -25,21 +26,67 @@ const automationUsers = [
 ];
 
 const FeaturesSection = () => {
+  const titleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  const cardContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.4 }
+    },
+    hover: {
+      scale: 1.03, // Scale up by 3%
+      boxShadow: "0px 15px 30px -5px rgba(0, 0, 0, 0.1)", // A slightly more pronounced shadow
+      transition: { duration: 0.2 }
+    }
+  };
+
   return (
     <section id="features" className="py-16 sm:py-24 bg-slate-50">
       <div className="roy-container px-4 mx-auto">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={titleVariants}
+        >
           <span className="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
             About us
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-regular text-gray-900">
             Empowering startups with <br /> smart CRM solutions
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={cardContainerVariants}
+        >
           {/* Card 1: Track projects */}
-          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl">
+          <motion.div 
+            className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl"
+            variants={cardVariants}
+            whileHover="hover"
+          >
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Track projects</h3>
             <p className="text-sm text-gray-600 mb-6">
               Monitor the number of active deals and sales pipelines in real-time.
@@ -58,10 +105,14 @@ const FeaturesSection = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2: Advanced analytics */}
-          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl">
+          <motion.div 
+            className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl"
+            variants={cardVariants}
+            whileHover="hover"
+          >
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Advanced analytics</h3>
             <p className="text-sm text-gray-600 mb-6">
               Track customer behavior, sales trends, & optimize your conversion rates
@@ -92,10 +143,14 @@ const FeaturesSection = () => {
                 </ResponsiveContainer>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3: Task automation */}
-          <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl">
+          <motion.div 
+            className="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-shadow hover:shadow-2xl"
+            variants={cardVariants}
+            whileHover="hover"
+          >
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Task automation</h3>
             <p className="text-sm text-gray-600 mb-6">
               Automate follow-ups, reminders, and workflow to reduce manual work
@@ -111,8 +166,8 @@ const FeaturesSection = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
