@@ -7,6 +7,7 @@ import Dashboard from '../components/Dashboard';
 import api from '../utils/api';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { Zap } from 'lucide-react';
 
 // Placeholder icons - replace with actual SVGs or an icon library like lucide-react later
 const HomeIcon = () => <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>;
@@ -78,8 +79,10 @@ export default function Campaigns() {
       <div className="w-64 bg-gradient-to-br from-white via-sky-100 to-sky-200 text-slate-800 flex flex-col fixed inset-y-0 left-0 shadow-lg">
         <div className="p-4 mb-2 border-b border-sky-200">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center text-white text-lg font-bold shadow-md">W</div>
-            <h1 className="text-xl font-semibold font-grotesk text-slate-900">Webster</h1>
+            <div className="w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center text-white shadow-md">
+              <Zap className="w-5 h-5" />
+            </div>
+            <h1 className="text-xl font-regular font-grotesk text-slate-900">Webster</h1>
           </div>
         </div>
         <nav className="flex-1 px-3 py-2 space-y-1">

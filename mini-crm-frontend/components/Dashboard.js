@@ -10,8 +10,8 @@ const MetricCard = ({ title, value, icon, gradientClasses, unit = '' }) => (
   <div className={`${gradientClasses || 'bg-gradient-to-br from-white via-sky-100 to-sky-200'} p-5 rounded-xl shadow-xl text-sky-800 flex items-center justify-between min-h-[120px]`}>
     {/* Left side: Title and Value */}
     <div className="flex flex-col">
-      <p className="text-sm font-semibold uppercase tracking-wider opacity-90">{title}</p>
-      <p className="text-4xl font-bold mt-1.5">{value}{unit && <span className="text-3xl font-bold align-baseline ml-1">{unit}</span>}</p>
+      <p className="text-sm font-regular uppercase tracking-wider opacity-90">{title}</p>
+      <p className="text-4xl font-regular mt-1.5">{value}{unit && <span className="text-3xl font-bold align-baseline ml-1">{unit}</span>}</p>
     </div>
     {/* Right side: Icon */}
     <div className="p-3 bg-sky-600 rounded-full shadow-md">

@@ -83,7 +83,7 @@ export default function CampaignForm({ rules, logic, onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg mb-8 font-inter space-y-8">
-      <h2 className="text-2xl font-bold font-grotesk text-slate-900">Campaign Details</h2>
+      <h2 className="text-2xl regular font-grotesk text-slate-900">Campaign Details</h2>
 
       {/* AI Message Assistant Section */}
       <div className="bg-gradient-to-br from-white via-sky-100 to-sky-300 p-6 rounded-xl shadow-xl space-y-6">

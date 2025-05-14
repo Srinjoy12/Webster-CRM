@@ -35,7 +35,7 @@ export default function CampaignHistory({ campaigns }) {
 
   return (
     <div className="mt-8 font-inter">
-      <h2 className="text-xl font-semibold text-slate-800 mb-4 font-grotesk">Campaign History</h2>
+      <h2 className="text-xl font-regular text-slate-800 mb-4 font-grotesk">Campaign History</h2>
       
       <div className="bg-white shadow-md rounded-lg overflow-hidden border border-slate-200">
         {campaigns.length === 0 ? (
