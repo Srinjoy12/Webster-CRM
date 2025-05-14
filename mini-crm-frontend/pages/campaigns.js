@@ -209,7 +209,7 @@ export default function Campaigns() {
 
           {currentView === 'templates' && (
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-semibold text-slate-800 mb-4 font-grotesk">Manage Templates</h2>
+              <h2 className="text-xl font-regular text-slate-800 mb-4 font-grotesk">Manage Templates</h2>
               <p className="text-slate-600">Template management interface will go here.</p>
               {/* Placeholder for template list, creation, editing tools */}
             </div>
